@@ -1,13 +1,26 @@
+/*
+ * Copyright (c) 2026 Debajyoti Nath. All rights reserved.
+ */
 package com.example.discoveryserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
+/**
+ * Entry point for the Netflix Eureka discovery server.
+ *
+ * @author Debajyoti Nath (Technical Architect - Java Backend)
+ */
 @EnableEurekaServer
 @SpringBootApplication
 public class DiscoveryServerApplication {
 
+    /**
+     * Starts the Eureka discovery server.
+     *
+     * @param args command-line arguments passed to Spring Boot
+     */
     public static void main(String[] args) {
         SpringApplication.run(DiscoveryServerApplication.class, args);
     }
