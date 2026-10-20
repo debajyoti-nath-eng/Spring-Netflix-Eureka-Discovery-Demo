@@ -20,6 +20,13 @@
         <module>discovery-server</module>
         <module>greeting-service</module>
     </modules>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/license/mit/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <java.version>21</java.version>
