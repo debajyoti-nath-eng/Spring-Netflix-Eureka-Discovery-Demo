@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Exposes the greeting endpoint provided by the greeting service.
+ * This service is independently deployable and registers with Eureka under
+ * the application name {@code greeting-service}.
  *
  * @author Debajyoti Nath (Technical Architect - Java Backend)
  */
@@ -25,7 +27,7 @@ public class GreetingController {
     }
 
     /**
-     * Response containing a greeting message.
+     * Response body returned by {@code GET /api/greeting}.
      *
      * @param message greeting text returned by the service
      */

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Exposes the quote endpoint provided by the quote service.
+ * This service registers with Eureka under the application name
+ * {@code quote-service}.
  *
  * @author Debajyoti Nath (Technical Architect - Java Backend)
  */
@@ -25,7 +27,7 @@ public class QuoteController {
     }
 
     /**
-     * Response containing a quote.
+     * Response body returned by {@code GET /api/quote}.
      *
      * @param message quote text returned by the service
      */

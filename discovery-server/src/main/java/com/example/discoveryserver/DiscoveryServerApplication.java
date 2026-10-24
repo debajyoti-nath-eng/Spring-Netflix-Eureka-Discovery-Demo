@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * Entry point for the Netflix Eureka discovery server.
+ * Entry point for the Netflix Eureka discovery server. This standalone server
+ * hosts the registry; it does not register itself as a client or fetch a
+ * registry, as configured in {@code application.yml}.
  *
  * @author Debajyoti Nath (Technical Architect - Java Backend)
  */

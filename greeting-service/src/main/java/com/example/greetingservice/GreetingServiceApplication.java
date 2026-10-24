@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * Entry point for the Eureka-registered greeting service.
+ * Entry point for the Eureka-registered greeting service. The application
+ * name and registry URL are configured in {@code application.yml}.
  *
  * @author Debajyoti Nath (Technical Architect - Java Backend)
  */

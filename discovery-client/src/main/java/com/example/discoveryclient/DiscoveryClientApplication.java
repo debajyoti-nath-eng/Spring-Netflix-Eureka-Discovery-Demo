@@ -12,6 +12,8 @@ import org.springframework.web.client.RestClient;
 
 /**
  * Entry point for a Eureka-registered service that consumes other services.
+ * The load-balanced {@link RestClient.Builder} interprets a service ID in a
+ * request URL as a Eureka lookup rather than a fixed hostname.
  *
  * @author Debajyoti Nath (Technical Architect - Java Backend)
  */
@@ -20,7 +22,8 @@ import org.springframework.web.client.RestClient;
 public class DiscoveryClientApplication {
 
     /**
-     * Starts the discovery client application.
+     * Starts the discovery client application, which registers with Eureka
+     * and uses its registry to locate downstream services.
      *
      * @param args command-line arguments passed to Spring Boot
      */
@@ -28,6 +31,12 @@ public class DiscoveryClientApplication {
         SpringApplication.run(DiscoveryClientApplication.class, args);
     }
 
+    /**
+     * Creates the {@link RestClient.Builder} used for calls addressed by
+     * Eureka service ID.
+     *
+     * @return a builder configured for Spring Cloud LoadBalancer
+     */
     @Bean
     @LoadBalanced
     RestClient.Builder loadBalancedRestClientBuilder() {
