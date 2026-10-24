@@ -1,6 +1,6 @@
 # Spring Netflix Eureka Discovery Demo
 
-A small Spring Boot multi-module project with a Netflix Eureka discovery server and a greeting service that registers itself with the server.
+A Spring Boot multi-module project demonstrating Netflix Eureka service registration and service-to-service discovery.
 
 ## Requirements
 
@@ -15,15 +15,22 @@ Start the Eureka server in one terminal:
 mvn -pl discovery-server spring-boot:run
 ```
 
-Start the greeting service in another terminal:
+Start the greeting and quote services in separate terminals:
 
 ```bash
 mvn -pl greeting-service spring-boot:run
+mvn -pl quote-service spring-boot:run
 ```
 
-The Eureka dashboard is available at [http://localhost:8761](http://localhost:8761). After the greeting service starts, it appears in the registry as `GREETING-SERVICE`.
+Start the discovery client in another terminal:
 
-Call the greeting service at [http://localhost:8081/api/greeting](http://localhost:8081/api/greeting).
+```bash
+mvn -pl discovery-client spring-boot:run
+```
+
+The Eureka dashboard is available at [http://localhost:8761](http://localhost:8761). The greeting service, quote service, and discovery client register as `GREETING-SERVICE`, `QUOTE-SERVICE`, and `DISCOVERY-CLIENT`.
+
+The provider endpoints are [http://localhost:8081/api/greeting](http://localhost:8081/api/greeting) and [http://localhost:8082/api/quote](http://localhost:8082/api/quote). The discovery client exposes [http://localhost:8083/api/discovery/summary](http://localhost:8083/api/discovery/summary), which resolves both providers by their Eureka service IDs through Spring Cloud LoadBalancer.
 
 ## License
 

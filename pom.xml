@@ -19,6 +19,8 @@
     <modules>
         <module>discovery-server</module>
         <module>greeting-service</module>
+        <module>quote-service</module>
+        <module>discovery-client</module>
     </modules>
 
     <properties>
